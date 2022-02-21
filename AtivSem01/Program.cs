@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-
+using System.Xml.Serialization;
 
 namespace AtivSem01
 {
@@ -52,14 +53,30 @@ namespace AtivSem01
 
                         case 3: //Instanciar um novo usuário
                                 //Incluindo alguns Clientes (teste) aos contrutores
-                            List<Clientes> clientes = new List<Clientes>();
-                            clientes.Add(new Clientes() { id = 1, nome = "William" });
-                            clientes.Add(new Clientes() { id = 2, nome = "Ana" });
-                            clientes.Add(new Clientes() { id = 3, nome = "Leonardo" });
-                            Console.WriteLine("Usuarios Salvo com sucesso! ");
+                                Console.Clear();    
+                                List<Clientes> clientes = new List<Clientes>();
+                                clientes.Add(new Clientes() { id = 1, nome = "William" });
+                                clientes.Add(new Clientes() { id = 2, nome = "Ana" });
+                                clientes.Add(new Clientes() { id = 3, nome = "Leonardo" });
+                                Console.WriteLine("Usuarios Salvo com sucesso! ");
+                            
+                            //Não é Possivel instanciare depois serializar a classe, mas não funcionou
+                            //porque a classe é protegida:
+                            //Console.WriteLine("Informe o nome do usuario: ");
+                            //clientes.nome = Console.ReadLine();
+                            //Console.WriteLine("Informe o Id do usuario ");
+                            //clientes.id = Convert.ToInt32(Console.ReadLine());
+                            ////Console.WriteLine("Informe o e-mail do usuario do usuario: ");
+                            ////clientes.email = Console.ReadLine();
+
+                            //XmlSerializer serializador = new XmlSerializer(typeof(Clientes));
+
+                            //StreamWriter stream = new StreamWriter("C:\\Users\\wills\\source\\repos\\AtivSem01\\Arquivor\01_SerializarXML.xml");
+                            //serializador.Serialize(stream, clientes);
                             break;
 
                         case 4:
+                            Console.Clear();
                             //Incluindo alguns (teste) Clientes aos contrutores
                             List<Pedidos> pedidos = new List<Pedidos>();
                             pedidos.Add(new Pedidos() { idPedido = 1, infoProduto = "Livro" });
@@ -76,7 +93,7 @@ namespace AtivSem01
             {
                 Console.WriteLine("Erro ex: "+ex.Message);
             }
-
+               
                 //Verificar se o usuário deeja continuar no sistema
                 Console.WriteLine("\nDeseja Sair do programa ?\n'S' para sim e 'N' para não");
                 opcao = Convert.ToChar(Console.ReadLine());
