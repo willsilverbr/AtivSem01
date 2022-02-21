@@ -8,19 +8,38 @@ namespace AtivSem01
 {
     interface IOperacoesBD
     {
-        public void Inserir()
+        public void InserirClientes()
         {
 
         }
-        public void Alterar()
+        public void AlterarClientes()
         {
 
         }
-        public void Deletar()
+        public void DeletarClientes()
         {
 
         }
-        public void Pesquisar()
+
+        public void PesquisarClientes()
+        {
+
+        }
+
+        public void InserirPedido()
+        {
+
+        }
+        public void AlterarPedido()
+        {
+
+        }
+        public void DeletarPedido()
+        {
+
+        }
+
+        public void PesquisarPedido()
         {
 
         }

@@ -52,9 +52,11 @@ namespace AtivSem01
         {
             Console.Clear();
 
+            //Criação de variaveis para comparação
             double numeroAtual;
             double maiorValor = 0;
 
+            //Rodando um for e captando os valores, para realizar a comparação com um if (interno)
             for (int i = 1; i <= 4; i++)
             {
                 Console.WriteLine("Digite o " + i + " valor:");
